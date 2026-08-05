@@ -1,0 +1,6 @@
+{
+  "name": "MerLiz Holdings (PTY)Ltd",
+  "description": "Full-screen e-commerce Progressive Web App for MerLiz Holdings (PTY)Ltd featuring Lekker bek lek biscuits, confectionery POS, order progress tracking, and WhatsApp invoicing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
