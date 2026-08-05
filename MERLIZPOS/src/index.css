@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #0b0b0e;
+    color: #e2e2e8;
+  }
+
+  h1, h2, h3, .font-serif, .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+/* Custom Gold Utilities */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #aa7c11 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fceaa9 0%, #e5c158 50%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold-glow {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.08);
+}
+
+.border-gold-active {
+  border-color: #d4af37;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.bg-dark-card {
+  background: rgba(22, 22, 28, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.bg-dark-panel {
+  background: #141418;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d10;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a35;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Safe Area Insets for standalone mobile PWA */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Print CSS for A4 Invoices */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-family: sans-serif !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .no-print, nav, header, footer, button, .bottom-nav, .toast-container {
+    display: none !important;
+  }
+
+  /* Reset fixed position modals and overflow containers for print engine */
+  .fixed.inset-0 {
+    position: static !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .max-h-\[92vh\], .overflow-y-auto {
+    max-height: none !important;
+    overflow: visible !important;
+    height: auto !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .print-container * {
+    color: #000000 !important;
+    border-color: #cccccc !important;
+  }
+
+  .print-container .text-gold-gradient {
+    -webkit-text-fill-color: #000000 !important;
+    color: #000000 !important;
+  }
+
+  .print-container .bg-dark-card,
+  .print-container .bg-dark-panel {
+    background: #ffffff !important;
+    border: 1px solid #dddddd !important;
+  }
+
+  /* Invoice Logo Print Rules */
+  .print-container img.invoice-logo,
+  img.invoice-logo {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 180px !important;
+    width: 150px !important;
+    height: auto !important;
+    filter: contrast(110%) !important;
+  }
+}
+
