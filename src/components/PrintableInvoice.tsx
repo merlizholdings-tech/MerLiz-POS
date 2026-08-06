@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import React from 'react';
 import { Invoice, PrintOptions } from '../types';
 import { formatCurrency, COMPANY_DETAILS, getOrderProgressLabel } from '../utils/whatsapp';
