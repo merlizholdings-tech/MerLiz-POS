@@ -268,8 +268,8 @@ export const PrintableInvoice: React.FC<PrintableInvoiceProps> = ({ invoice, opt
               </h3>
               <p className="font-bold text-gray-900">{COMPANY_DETAILS.name}</p>
               <p className="text-gray-700">{COMPANY_DETAILS.address}</p>
-              <p className="mt-1"><span className="font-semibold">Payment Method:</span> {invoice.invoice.paymentMethod.replace('_', ' ').toUpperCase()
-</p>
+              <p className="mt-1"><span className="font-semibold">Payment Method:</span> {invoice.invoice.paymentMethod.replace('_', ' ').toUpperCase()}</p>
+
               {invoice.cardTransactionRef && (
                 <p><span className="font-semibold">Card POS Ref:</span> {invoice.cardTransactionRef}</p>
               )}
